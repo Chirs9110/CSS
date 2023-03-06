@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Digit Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background">
+        <div id='clockframe'>
+            <div id='display1'></div>
+            <div id='display2'></div>
+        </div>
+    </div>
+    <script>
+
+        days = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+        function update() {
+            most = new Date()
+            day = most.getDate()
+            year = most.getFullYear()
+            month = most.getMonth() + 1
+
+            ssz = most.getDay()
+
+            hrs = most.getHours()
+            min = most.getMinutes()
+            sec = most.getSeconds()
+
+
+            if (month < 10) month = "0" + month
+            if (day < 10) day = "0" + day
+            if (hrs < 10) hrs = "0" + hrs
+            if (min < 10) min = "0" + min
+            if (sec < 10) sec = "0" + sec
+
+
+            display1.innerHTML = hrs + ":" + min + ":" + sec
+            display2.innerHTML = day + " " + month + " " + year + "<br>" + days[ssz]
+        }
+
+        setInterval('update()', 1000)
+        update()
+
+    </script>
+</body>
+
+</html>
