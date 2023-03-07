@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js animation</title>
+
+    <style>
+        body {
+            background: black;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(to right, red, purple, yellow);
+            border-radius: 50%;
+            position: relative;
+            animation-name: circleMoving;
+            animation-duration: 3s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes circleMoving {
+            0% {
+                top: 0px;
+                background-image: linear-gradient(to right, red, purple, yellow);
+                transform: rotate(30deg);
+            }
+
+            25% {
+                left: 500px;
+                background-image: linear-gradient(to right, blue, black, yellow);
+                transform: rotate(30deg);
+                width: 150px;
+                height: 150px;
+            }
+
+            50% {
+                top: 80px;
+                left: 1000px;
+                background-image: linear-gradient(to right, yellow, pink, green);
+                transform: rotate(30deg);
+                width: 320px;
+                height: 320px;
+            }
+
+            75% {
+                top: 80px;
+                left: 500px;
+                background-image: linear-gradient(to right, violet, cyan, magenta);
+                transform: rotate(180deg);
+                width: 320px;
+                height: 320px;
+            }
+
+            90% {
+                top: 60px;
+                left: 0px;
+                background-image: linear-gradient(to right, red, grey, white);
+                transform: rotate(180deg);
+                width: 200px;
+                height: 200px;
+            }
+
+            100% {
+                top: 0px;
+                left: 0px;
+                background-image: linear-gradient(to right, red, grey, white);
+                transform: rotate(250deg);
+                width: 200px;
+                height: 200px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" onclick="ani()">
+
+    </div>
+
+
+
+</body>
+<script>
+    function ani() {
+        document.querySelector("#box").style.animation = "circleMoving 10s";
+    }
+
+</script>
+
+</html>
