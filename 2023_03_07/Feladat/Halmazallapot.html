@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>waterShow</title>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans:300,400|Oswald:400,700');
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box
+    }
+
+    body {
+        font-family: 'Lato', sans-serif;
+        padding: 30px;
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 5px;
+    }
+
+    .slidecontainer {
+        margin-top: 10px;
+    }
+
+    .slider-range {
+        width: 100%;
+    }
+
+    .range-number {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3px;
+        margin-bottom: 15px;
+    }
+</style>
+
+<body>
+
+    <div class="imagechange">
+        <img src="ice.jpg" id="imgchange">
+    </div>
+
+    <div class="slidecontainer">
+        <input type="range" min="-200" max="200" value="0" class="slider-range" id="myRange">
+        <ul class="range-number">
+            <li>Ice</li>
+            <li>Water</li>
+            <li>Steam</li>
+
+        </ul>
+        <p>Temperature: <span id="rangevalue"></span> <sup>o</sup>C</p>
+    </div>
+
+
+
+    <script>
+        let rangevalue = document.getElementById("myRange");
+        let setvalue = document.getElementById("rangevalue");
+        let imgchangevalue = document.getElementById("imgchange")
+        rangevalue.oninput = function () {
+            let getvalue = rangevalue.value;
+            setvalue.innerHTML = this.value;
+            if (getvalue > -200 && getvalue < 0) {
+                imgchangevalue.setAttribute("src", "ice.jpg")
+            } else if (getvalue >= 0 && getvalue <= 99) {
+                imgchangevalue.setAttribute("src", "water.jpg")
+            } else if (getvalue >= 100 && getvalue <= 200) {
+                imgchangevalue.setAttribute("src", "steam.jpg")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+</script>
+
+</html>
